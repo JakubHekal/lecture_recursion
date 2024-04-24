@@ -7,7 +7,9 @@ def recursive_nth_fibo(n):
 
 
 def main():
-    print(recursive_nth_fibo(3))
+    n = int(input("Zadejete požadovaný počet členů Fibo. poslopnosti:"))
+    seq = [recursive_nth_fibo(i) for i in range(n)]
+    print(seq)
     pass
 
 
