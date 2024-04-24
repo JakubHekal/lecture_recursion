@@ -43,13 +43,13 @@ def binary_search(seq, number):
 
 
 def recursive_binary_search(haystack, needle, offset=0):
-    right = len(haystack)
+    right = len(haystack) - 1
     if right <= 3:
         return None
 
     middle = right // 2
     if needle < haystack[middle]:
-        return recursive_binary_search(haystack[:middle+1], needle, offset)
+        return recursive_binary_search(haystack[:middle], needle, offset)
     elif needle > haystack[middle]:
         return recursive_binary_search(haystack[middle-1:], needle, offset + middle - 1)
     else:
@@ -62,10 +62,10 @@ def main(file_name, number):
     # iterative binary search
     print(binary_search(sequence, number=number))
     print(recursive_binary_search(sequence, number))
-    pass;
+    pass
 
 
 if __name__ == "__main__":
     my_file = "sequential.json"
-    my_number = 11
+    my_number = 90
     main(my_file, my_number)
